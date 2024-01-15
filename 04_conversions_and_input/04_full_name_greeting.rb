@@ -10,3 +10,8 @@ l_name = gets.chomp
 puts ''
 puts "You've got us, #{f_name} #{l_name}!"
 puts ''
+
+puts f_name.upcase
+puts l_name.downcase
+puts f_name.swapcase
+puts f_name.swapcase.capitalize
