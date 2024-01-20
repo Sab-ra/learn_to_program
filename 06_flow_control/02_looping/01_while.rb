@@ -8,3 +8,6 @@ while input.downcase != "goodbye"
   print "What you have for me? "
   input = gets.chomp
 end
+
+puts ''
+puts "Come again soon!"
