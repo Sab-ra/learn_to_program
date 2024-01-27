@@ -17,3 +17,14 @@ u_t_c  = [ [ "name_a", 24 ], [ "name_b", 15 ]]
 ## Sorted table of contents
 
 sorted_table_of_contents = u_t_c.sort{ | a,b | a[ 1 ] <=> b[ 1 ] }
+
+## Print table of contents
+
+```
+line_width = 60
+
+puts( "Table of Contents".center( line_width ))
+puts
+puts
+puts( ")
+```
