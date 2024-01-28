@@ -13,12 +13,12 @@ puts "MATCH 1: Which flavour is best?"
 print "a. #{ match_1[ 0 ]} or b. #{ match_1[ 1 ]}: "
 puts
 
-while true 
+while true                              # to set and infinite loop
   answer = gets.chomp.downcase
   if( answer == 'a' || answer == 'b' )
     answer == 'a' ? match_winner = 0 : match_winner = 1
     match_3 << match_1[ match_winner ]
-    break
+    break                               # to break out from the infinite loop
   else
     print "Please, answer a or b: "
   end
