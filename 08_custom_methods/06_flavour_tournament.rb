@@ -49,50 +49,57 @@ def select_winner( this_match_array )
   return match_winner
 end
 
-round = 1
+round = 0
 teams = get_tournament_participants
 line_width = 70
 
+puts
 puts "The teams are:"
 puts teams
 
+while teams.length > 1
 
-puts
-puts "ROUND #{ round }!"
-puts
+  round += 1
 
-matches_in_round = []
+  puts
+  puts "ROUND #{ round }!"
+  puts
 
-until teams.length <= 1
-  matches_in_round << form_match( teams )
+  matches_in_round = []
+
+  until teams.length <= 1
+    matches_in_round << form_match( teams )
+  end
+
+  puts
+  matches_in_round.each do | match |
+    puts( match.join( " -- " ).center(line_width))
+  end
+  puts 
+  if teams.length == 1 
+    print "Lift to next round: #{teams.to_s}" 
+  end
+  puts
+  puts
+  matches_in_round.each do | match |
+    match_winner = select_winner( match )
+    teams << match_winner
+  end
+  puts 
+
+  if teams.length == 1
+    puts "The WINNER of the tournament"
+    puts "Ladies and Gents, e-e-e-i-s..."
+    puts teams.join.upcase + ' ! ! !'
+  elsif teams.length == 2
+    puts "The final will be played between"
+    puts teams
+  elsif teams.length <= 4
+    puts "The teams in semi-final are"
+    puts teams
+  else 
+    puts "Teams that go to the next round:"
+    puts teams
+  end
+  puts
 end
-
-puts
-matches_in_round.each do | match |
-  puts( match.join( " -- " ).center(line_width))
-end
-puts 
-print teams
-puts
-puts
-matches_in_round.each do | match |
-  match_winner = select_winner( match )
-  teams << match_winner
-end
-puts 
-
-if teams.length == 1
-  puts "The WINNER of the tournament"
-  puts "Ladies and Gents, e-e-e-i-s..."
-  puts teams.join.upcase + ' ! ! !'
-elsif teams.length == 2
-  puts "The final will be played between"
-  puts teams
-elsif teams.length <= 4
-  puts "The teams in semi-final are"
-  puts teams
-else 
-  puts "Teams that go to the next round:"
-  puts teams
-end
-puts
