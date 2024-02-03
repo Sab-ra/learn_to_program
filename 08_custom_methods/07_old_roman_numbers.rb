@@ -4,9 +4,9 @@
 
 # This method converts any number in old romans
 
-def convert_to_old_roman( number )
+def convert_to_old_roman( int )
 
-  number = number.to_i
+  number = int
 
   roman_keys = [ 'M', 'D', 'C', 'L', 'X', 'V', 'I' ]
   roman_values = [ 1000, 500, 100, 50, 10, 5, 1 ]
@@ -26,9 +26,16 @@ def convert_to_old_roman( number )
   old_roman = old_roman_array.join
 end
 
+
+user_number = 0
+
+while user_number.to_i == 0 || user_number < 0
+  puts
+  print "Enter a positive number: "
+  user_number = gets.chomp.to_i
+end
+
 puts
-print "Enter any number: "
-user_number = gets.chomp
+puts "Old Roman numerical for your number is #{ convert_to_old_roman( user_number )}"
 puts
-puts "Old Roman numerical for your number is #{ convert_to_roman( user_number )}"
-puts
+
