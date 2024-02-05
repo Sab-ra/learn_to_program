@@ -1,0 +1,134 @@
+# This file will keep data structure
+# with information about a person
+
+uuid: 23b9b3e3-3f3d-4e3e-8e3e-3e3e3e3e3e3e
+tax_id: 123456789
+last_name: Шевченко # Shevchenko
+first_name: Таїсія # Taras
+middle_name: Романівна # Romanivna
+last_name_en: Shevchenko
+first_name_en: Taisia
+middle_name_en: Romanivna
+sex: female
+pronouns: she/her
+birth_date: 1990-01-01
+birth_place: Kyiv
+birth_country: Ukraine
+contacts:
+  - type: email
+    value: 
+    verified: false
+    additional: false
+  - type: main_phone
+    value: 
+    verified: false
+    additional: false
+  - type: mobile_phone
+    value: 
+    verified: false
+    additional: true
+  - type: landline_phone
+    value: 
+    verified: false
+    additional: true
+  - address:
+      country: Ukraine
+      region: Kyiv
+      city: Kyiv
+      street: 
+      house: 
+      flat: 
+      postal_code:
+      verified: false
+      registered: true
+      owner: true
+      additional: false
+  - address_residential:
+      country: Ukraine
+      region: Kyiv
+      city: Kyiv
+      street: 
+      house: 
+      flat: 
+      postal_code:
+      verified: false
+      registered: false
+      owner: true
+      additional: false
+is_citizen: true
+has_passport: false
+passport:
+  series: 
+  number: 
+  issued_by: 
+  issued_date: 
+  valid_until: 
+  verified: false
+  registered: false
+  owner: true
+  additional: false
+has_id_card: true
+id_card:
+  number: 
+  issued_by: 
+  issued_date: 
+  valid_until: 
+  verified: false
+  registered: false
+  owner: true
+  additional: false
+is_resident: true
+has_residence_permit: false
+residence_permit:
+  number: 
+  issued_by: 
+  issued_date: 
+  valid_until: 
+  verified: false
+  registered: false
+  owner: true
+  additional: false
+is_policy_holder: true
+- policy:
+    number: 100690345
+    type: LT 
+    valid_until: 
+    paid_to_date:
+    is_active: true
+    verified: false
+    registered: false
+    owner: true
+    additional: false
+- policy:
+    number: 100690346
+    type: ST
+    valid_until: 
+    paid_to_date:
+    is_active: true
+    verified: false
+    registered: false
+    owner: true
+    additional: true
+has_insurance: true
+- insurance_program:
+    name: 
+    icon: *.svg
+    face_amount: 
+    type: 
+    valid_until: 
+    verified: false
+    registered: false
+    owner: self/policy_owner_name
+    additional: false
+policy_acknowledges:
+  - terms_accepted: true
+    date: 2021-01-01
+    ip:
+  - personal_data_processing_accepted: true
+    date: 2021-01-01
+    ip:
+  - marketing_accepted: true
+    date: 2021-01-01
+    ip:
+    
+```
