@@ -8,7 +8,7 @@
 # 5. The result should be equal to the last digit of the tax ID
 # 
 # Assembled by Keira Moore 
-# from the following sources:
+# from the following source:
 # https://github.com/lozik4/UkrTaxIdGenerator/blob/main/tax_id_generator/tax_id_gen.py
 #
 
@@ -46,9 +46,9 @@ end
 
 puts
 print "Enter the tax ID to validate: "
-puts
 
 tax_id = gets.chomp
+puts
 validator = UkrainianTaxIdValidator.new( tax_id )
 if validator.valid?
   puts "The Tax ID is valid."
