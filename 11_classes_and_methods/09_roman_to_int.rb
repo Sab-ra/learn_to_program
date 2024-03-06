@@ -3,90 +3,71 @@
 # accept user input
   # upcase
 # verify that user input is a valid roman
-  # all characters
-  # sequence check
-
+  # all characters are valid
 # convert to int
-  # check last two char for 9 and 4
-  # summ backwards
+
 
 
 
 def validate_roman_chars( upcase_string )
-  i = upcase_string.length - 1
+  i = 0
+  roman_sequence = []
   roman_char = false
   valid_chars = [ 'M', 'D', 'C', 'L', 'X', 'V', 'I' ]
-  while i > -1 
+  while i < upcase_string.length
     print '.'
     char = upcase_string[ i ]
     valid_chars.each do | check |
       if char == check
         roman_char = true
+        roman_sequence << char
         break
       else
         roman_char = false
+        roman_sequence = []
       end
     end
-    roman_char == true ? i -= 1 : i = -1
+    roman_char == true ? i += 1 : i = upcase_string.length
   end
-  return roman_char
+  return roman_sequence
 end
 
-def validate_roman_sequence( roman_chars_string )
-  sequence_valid = false
-  length = roman_chars_string.length
-  control_left = 'M'
-  control_right = nil
-  roman_keys = [ 'M', 'D', 'C', 'L', 'X', 'V', 'I' ]
+def roman_to_int( array )
+  roman_map = { 
+    'M' => 1000,
+    'D' => 500,
+    'C' => 100,
+    'L' => 50,
+    'X' => 10,
+    'V' => 5,
+    'I' => 1
+  }
 
-  if length == 1
-    sequence_valid = true
-  end
+  value = 0
+  previous_value = 0
 
-  if roman_chars_string[ -2, 2 ] == 'IX'
-    length = length - 2
-    control_right = 'IX'
-  elsif roman_chars_string[ -2, 2 ] == 'IV'
-    length = length - 2
-    control_right = 'IV'
-  end
-  if length == 0
-    sequence_valid = true
-  end
-
-  i = 0 
-  while i < length
-    roman_keys.each do | key |
-      if roman_chars_string[ i ] == key
-        sequence_valid = true
-        control_left = key
-        if control_left == 'D'
-          roman_keys = [ 'D', 'C', 'L', 'X', 'V', 'I' ]
-        elsif control_left == 'C'
-          roman_keys = [ 'C', 'L', 'X', 'V', 'I' ]
-        elsif control_left == 'L'
-          roman_keys = [ 'L', 'X', 'V', 'I' ]
-        elsif control_left == 'X'
-          roman_keys = [ 'X', 'V', 'I' ]
-        else
-          roman_keys = [ 'I' ]
-        end
-      
-      end
+  array.reverse.each do | char |
+    value = roman_map[ char ]
+    if value < previous_value
+      value -= value
+    else
+      value += value
     end
-    i += 1
+    previous_value = value
   end
-
-  sequence_valid
 end
 
-puts
-puts "Enter a Roman numerical"
-roman_numerical = gets.chomp.upcase
-puts
-roman_chars = validate_roman_chars( roman_numerical )
-puts
-puts "Input uses Roman chars? #{ roman_chars }"
-puts
-roman_sequence = validate_roman_sequence( roman_numerical )
-puts "Sequence #{ roman_sequence }"
+
+roman_numerical = false
+
+while roman_numerical != true 
+  puts "Enter a Roman numerical"
+  roman_numerical = gets.chomp.upcase
+  roman_chars = validate_roman_chars( roman_numerical )
+  if roman_chars == false
+    puts "Invalid Roman numerical"
+  else
+    roman_to_int( roman_chars )
+  end
+end
+puts "The Roman numerical #{ roman_numerical } is #{ roman_to_int }"
