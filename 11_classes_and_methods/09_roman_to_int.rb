@@ -11,7 +11,7 @@
 
 def validate_roman_chars( upcase_string )
   i = 0
-  roman_sequence = []
+  roman_numerical = ''
   roman_char = false
   valid_chars = [ 'M', 'D', 'C', 'L', 'X', 'V', 'I' ]
   while i < upcase_string.length
@@ -20,19 +20,19 @@ def validate_roman_chars( upcase_string )
     valid_chars.each do | check |
       if char == check
         roman_char = true
-        roman_sequence << char
+        roman_numerical = "#{ roman_numerical }#{ char }"
         break
       else
         roman_char = false
-        roman_sequence = []
+        roman_numerical = nil
       end
     end
     roman_char == true ? i += 1 : i = upcase_string.length
   end
-  return roman_sequence
+  roman_numerical
 end
 
-def roman_to_int( array )
+def roman_to_int( roman_numerical )
   roman_map = { 
     'M' => 1000,
     'D' => 500,
@@ -46,7 +46,7 @@ def roman_to_int( array )
   value = 0
   previous_value = 0
 
-  array.reverse.each do | char |
+  roman_numerical.reverse.each_char do | char |
     value = roman_map[ char ]
     if value < previous_value
       value -= value
@@ -58,16 +58,16 @@ def roman_to_int( array )
 end
 
 
-roman_numerical = false
+result = nil
 
-while roman_numerical != true 
+while result != true 
   puts "Enter a Roman numerical"
-  roman_numerical = gets.chomp.upcase
-  roman_chars = validate_roman_chars( roman_numerical )
-  if roman_chars == false
+  potential_roman_numerical = gets.chomp.upcase
+  roman_numerical = validate_roman_chars( potential_roman_numerical )
+  if roman_numerical == false
     puts "Invalid Roman numerical"
   else
-    roman_to_int( roman_chars )
+    result = roman_to_int( roman_numerical )
   end
 end
-puts "The Roman numerical #{ roman_numerical } is #{ roman_to_int }"
+puts "The Roman numerical #{ roman_numerical } is #{ result }"
