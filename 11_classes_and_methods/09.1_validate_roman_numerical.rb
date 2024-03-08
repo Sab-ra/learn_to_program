@@ -13,7 +13,7 @@ def validate_roman_chars( upcase_string )
         break
       else
         roman_char = false
-        roman_numerical_array = []
+        # roman_numerical_array = []
       end
     end
     roman_char == true ? i += 1 : i = upcase_string.length

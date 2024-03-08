@@ -1,6 +1,6 @@
 
 def valid_roman_numerical?( string )
-  !!( string =~ /\A [MDCLXVI] + \Z/)
+  !!( string =~ /\A[MDCLXVI]+\Z/)
 end
 
 def roman_to_int( roman_numerical )
@@ -29,17 +29,15 @@ def roman_to_int( roman_numerical )
   total
 end
 
-roman_numerical_candidate = nil
 result = nil
 
-while roman_numerical_candidate == nil
-  puts "Enter roman numerical"
-  roman_numerical_candidate = gets.chomp.upcase
-  if valid_roman_numerical?( roman_numerical_candidate )
-    roman_numerical = roman_numerical_candidate
-    result = roman_to_int( roman_numerical )
-    puts result
-  else
-    roman_numerical_candidate = nil
-  end
+puts "Enter roman numerical"
+roman_numerical_candidate = gets.chomp.upcase
+puts valid_roman_numerical?( roman_numerical_candidate )
+if valid_roman_numerical?( roman_numerical_candidate )
+  roman_numerical = roman_numerical_candidate
+  result = roman_to_int( roman_numerical )
+  puts result
+else
+  puts "You entered not valid roman numerical: #{ roman_numerical_candidate }"
 end
