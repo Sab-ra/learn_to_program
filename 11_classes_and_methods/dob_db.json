@@ -1,0 +1,94 @@
+// This file is a test database with full names and birthdates of 35 people.
+// The birthdates shall represent average people from different age groups.
+// The names are randomly generated and do not represent real people.
+
+let testDatabase = [
+  {
+    name: "John Doe",
+    birthdate: "1980-01-01",
+  },
+  {
+    name: "Jane Doe",
+    birthdate: "1985-01-01",
+  },
+  {
+    name: "John Smith",
+    birthdate: "1990-01-01",
+  },
+  {
+    name: "Jane Smith",
+    birthdate: "1995-01-01",
+  },
+  {
+    name: "John Johnson",
+    birthdate: "2000-01-01",
+  },
+  {
+    name: "Jane Johnson",
+    birthdate: "2005-01-01",
+  },
+  {
+    name: "John Williams",
+    birthdate: "2010-01-01",
+  },
+  {
+    name: "Jane Williams",
+    birthdate: "2015-01-01",
+  },
+  {
+    name: "John Brown",
+    birthdate: "2020-01-01",
+  },
+  {
+    name: "Jane Brown",
+    birthdate: "2025-01-01",
+  },
+  {
+    name: "John Davis",
+    birthdate: "2030-01-01",
+  },
+  {
+    name: "Jane Davis",
+    birthdate: "2035-01-01",
+  },
+  {
+    name: "John Miller",
+    birthdate: "2040-01-01",
+  },
+  {
+    name: "Jane Miller",
+    birthdate: "2045-01-01",
+  },
+  {
+    name: "John Wilson",
+    birthdate: "2050-01-01",
+  },
+  {
+    name: "Jane Wilson",
+    birthdate: "2055-01-01",
+  },
+  {
+    name: "John Moore",
+    birthdate: "2060-01-01",
+  },
+  {
+    name: "Jane Moore",
+    birthdate: "2065-01-01",
+  },
+  {
+    name: "John Taylor",
+    birthdate: "2070-01-01",
+  },
+  {
+    name: "Jane Taylor",
+    birthdate: "2075-01-01",
+  },
+  {
+    name: "John Anderson",
+    birthdate: "2080-01-01",
+  },
+  {
+    name: "Jane Anderson",
+    birthdate: "2085-01-01",
+  }
+]
